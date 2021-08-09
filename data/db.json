@@ -1,0 +1,17 @@
+{
+    "projects":[
+        {
+            "id": 1,
+            "title": "Create new homepage",
+            "details": "Make some styles",
+            "complete": false
+        },
+
+        {
+            "id": 2,
+            "title": "Do your homework in programming",
+            "details": "Start fetch data to localStorage",
+            "complete": true
+        }
+    ]
+}
