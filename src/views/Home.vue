@@ -2,7 +2,7 @@
 <div class="home">
   <div v-if="projects.length">
     <div v-for="project in projects" :key="project.id">
-        <p>{{project.title}}</p>
+       <single-project :project="project"></single-project>
     </div>
   </div>
 
@@ -10,12 +10,12 @@
 </template>
 
 <script>
-
+import SingleProject from '../components/SingleProject.vue'
 
 export default {
   name: 'Home',
   components: {
-
+     SingleProject
   },
   data(){
     return{
