@@ -2,7 +2,17 @@
  <div class="container" @click="openIt">
      <div class="title">
         <h3>{{project.title}}</h3>
+
+        <div class="icons">
+            <span class="material-icons">done</span>
+
+            <span class="material-icons">edit</span>
+
+            <span class="material-icons">delete</span>
+
+        </div>
      </div>
+
 
      <div v-if="isOpen" class="details">
         <p>{{project.details}}</p>
@@ -31,21 +41,34 @@ export default {
 
 <style>
   .container{
-      display: inline-block;
-      width: 50vh;
-      padding: 5px;
-       margin-bottom: 10px;
-      background-color: rgb(240, 240, 65);
-      margin-left: 40%;
-      color: #444;
+
+     margin: 20px auto;
+     background: rgb(241, 255, 42);
+     padding: 10px 20px;
+     border-radius: 4px;
+     box-shadow: 1px 2px 3px rgba(0, 0, 0, 0);
+     height: 50%;
+     border-left: 4px solid #000;
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 77%);
   }
-
-  .title{
-      margin-left: 50px;
+  h3{
+      cursor: pointer;
   }
 
-  .details{
-      margin-left: 55px;
-  }
+.title{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+
+}
+
+.material-icons{
+    margin-left: 5px;
+    margin-block: 20px;
+    cursor: pointer;
+}
+
+.material-icons:hover{
+    color: #444
+}
 </style>
