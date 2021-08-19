@@ -8,7 +8,7 @@
 
             <span class="material-icons">edit</span>
 
-            <span class="material-icons">delete</span>
+            <span @click="deleteProject" class="material-icons">delete</span>
 
         </div>
      </div>
@@ -26,13 +26,18 @@ export default {
 
     data(){
         return{
-            isOpen: false
+            isOpen: false,
+            uri:  'http://localhost:3000/projects' + this.project.id
         }
     },
 
     methods: {
         openIt(){
             this.isOpen = !this.isOpen
+        },
+
+        deleteProject(){
+            fetch(this.uri, {method: 'DELETE'}).then(() => this.$emit('delete', this.project.id))
         }
     }
 
